@@ -287,3 +287,7 @@ hi SpellCap cterm=underline ctermfg=lightred ctermbg=black
 hi SpellRare cterm=underline ctermfg=lightred ctermbg=black
 hi SpellLocal cterm=underline ctermfg=lightred ctermbg=black
 
+" Change cursor in insert mode
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
