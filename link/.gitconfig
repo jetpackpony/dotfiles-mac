@@ -1,0 +1,22 @@
+[user]
+  name = jetpackpony
+  email = jetpackpony@gmail.com
+[color]
+  ui = true
+[push]
+  default = simple
+[core]
+  excludesfile = ~/.gitignore_global
+[diff]
+  tool = vimdiff
+  compactionHeuristic = true
+[difftool]
+  prompt = false
+[alias]
+  unstage = reset HEAD --
+  graph = log --oneline --graph
+  last = log -1 HEAD -p
+[merge]
+  tool = vimdiff
+[credential]
+  helper = osxkeychain

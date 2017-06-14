@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Get the .dotfiles directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+BACKUP=$DIR/backups
+
+if [ ! -d $BACKUP ]; then
+  mkdir $BACKUP
+fi
+
+# Get the list of files and loop over them
+FILES=`ls -A $DIR/link`
+for f in $FILES
+do
+  TARGET=$HOME/$f
+
+  # If file is already a link, skip it
+  if [ -L $TARGET ]; then
+    echo "Skipping $TARGET. File is already a link"
+    continue
+  fi
+
+  # If file exists back it up first
+  if [ -f $TARGET ]; then
+    echo "Backing up $TARGET"
+    mv $TARGET $BACKUP/$f
+  fi
+
+  # Now create a link
+  echo "Creating a link to $TARGET"
+  ln -s $DIR/link/$f $TARGET
+done

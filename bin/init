@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Create a backup dir for vim tmp files
+mkdir ~/.backup
