@@ -2,6 +2,9 @@
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 
-
+### Add tmux layouts to PATH
+if [ -d "$HOME/.dotfiles/tmux_layouts" ] ; then
+  PATH="$HOME/.dotfiles/tmux_layouts:$PATH"
+fi
 
 export PATH
