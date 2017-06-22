@@ -8,4 +8,17 @@ if [ -d "$HOME/.dotfiles/tmux_layouts" ] ; then
   PATH="$HOME/.dotfiles/tmux_layouts:$PATH"
 fi
 
+### Add Android stuff to path
+if [ -d "$HOME/Library/Android/sdk" ] ; then
+  PATH="$HOME/Library/Android/sdk:$PATH"
+  PATH="$HOME/Library/Android/sdk/tools:$PATH"
+  PATH="$HOME/Library/Android/sdk/tools/bin:$PATH"
+  PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+  PATH="$HOME/Library/Android/sdk/build-tools:$PATH"
+  PATH="/usr/local/opt/gradle:$PATH"
+  PATH="/usr/local/opt/gradle/bin:$PATH"
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+  export GRADLE_HOME="/usr/local/opt/gradle"
+fi
+
 export PATH
