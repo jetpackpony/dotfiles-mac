@@ -1,3 +1,4 @@
+#!/bin/bash
 # Make vim the default playa
 export VISUAL=vim
 export EDITOR="$VISUAL"
