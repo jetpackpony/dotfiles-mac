@@ -1,0 +1,11 @@
+#!/bin/sh
+cd /Users/vvtaranov/Projects/questessence
+tmux has-session -t questessence
+if [ $? != 0 ]; then
+  tmux new-session -s questessence -n vim -d
+  tmux send-keys -t questessence 'vim' Enter
+  tmux split-window -h -t questessence
+  tmux send-keys -t questessence:vim.2 'cd ..' Enter
+  tmux send-keys -t questessence:vim.2 'git status' Enter
+fi
+tmux attach -t questessence
