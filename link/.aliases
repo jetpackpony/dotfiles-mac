@@ -27,3 +27,9 @@ alias ..='cd ../'
 
 # Git stuff
 alias gtree='git log --graph --decorate --oneline --all'
+
+# Map python to python3
+alias py='python3'
+
+# Add node with breakpoint
+alias nodebrk='node --inspect-brk'

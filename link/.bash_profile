@@ -1,6 +1,6 @@
 #!/bin/bash
 # Make vim the default playa
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Load the shell dotfiles, and then some:
@@ -23,3 +23,17 @@ fi
 
 # Setup JAVA_HOME
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Setup google cloud sdk
+GCSDK_DIR="$HOME/google-cloud-sdk"
+[ -s "$GCSDK_DIR/completion.bash.inc" ] && \. "$GCSDK_DIR/completion.bash.inc"
+[ -s "$GCSDK_DIR/path.bash.inc" ] && \. "$GCSDK_DIR/path.bash.inc"
+
+# Setup virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Setup autoenv
+export AUTOENV_ENABLE_LEAVE="true"
+source /usr/local/opt/autoenv/activate.sh
