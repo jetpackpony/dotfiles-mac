@@ -126,6 +126,8 @@ Plugin 'cakebaker/scss-syntax.vim' " sass syntax highlihgt
 Plugin 'pangloss/vim-javascript' " js syntax
 Plugin 'mxw/vim-jsx' " jsx for react syntax
 Plugin 'mattn/emmet-vim' " emmet for faster html/css typing
+Plugin 'yegappan/greplace' " search and replace
+Plugin 'neovimhaskell/haskell-vim' " Haskell syntax highlighting
 " Plugin 'benmills/vimux'
 " Plugin 'tpope/vim-fugitive' " the ultimate git helper
 " Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in
@@ -297,4 +299,17 @@ else
 endif
 
 " Add color line at certain width
-set colorcolumn=68
+set colorcolumn=80
+
+let g:haskell_classic_highlighting = 1
+
+" Close buffer with leader
+noremap <Leader>q :q<Enter>
+noremap <Leader>w :w<Enter>
+
+" Close all but the current buffer
+noremap <Leader>o :tabo<Enter>
+
+" Next/prev tab
+noremap <Leader>h gT
+noremap <Leader>l gt
