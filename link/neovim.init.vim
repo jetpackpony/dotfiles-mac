@@ -37,12 +37,14 @@ inoremap <M-l> <Esc><C-w><C-l>
 inoremap <M-h> <Esc><C-w><C-h>
 
 " Remap leader
-let mapleader = ";"
+" Don't set Space here, it'll slow down typing.
+" Don't set semicolon here, it is overwritten by 'next f result' command
+let mapleader = "\<Space>"
 
 " Some buffer operations
-nmap <leader>n :enew<cr>
-nmap <C-j> :bnext<CR>
-nmap <C-k> :bprevious<CR>
+nnoremap <leader>n :enew<cr>
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-k> :bprevious<CR>
 
 " Show some lines around coursor
 set scrolloff=10
@@ -53,9 +55,13 @@ set history=1000
 " Remove search highlight
 nnoremap <C-c> :noh<CR>
 
-" Paste from a system-wide clipboard
+" Paste from a yank buffer
 nnoremap <leader>p "0p
 nnoremap <leader>P "0P
+
+" Paste from a system-wide clipboard
+nnoremap <leader>8 "*p
+nnoremap <leader>* "*P
 
 " Case-insensitive search
 set ignorecase
@@ -82,19 +88,13 @@ noremap <M-p> gT
 tnoremap <Esc> <C-\><C-n>
 
 " Quickly create a new terminal in a new tab
-tnoremap <Leader>c <C-\><C-n>:tab new<CR>:term<CR>
 nnoremap <Leader>c :tab new<CR>:term<CR>
-inoremap <Leader>c <Esc>:tab new<CR>:term<CR>
 
 " Quickly create a new terminal in a vertical split
-tnoremap <Leader>% <C-\><C-n>:vsp<CR>:term<CR>
 nnoremap <Leader>% :vsp<CR>:term<CR>
-inoremap <Leader>% <Esc>:vsp<CR>:term<CR>
 
 " Quickly create a new terminal in a horizontal split
-tnoremap <Leader>" <C-\><C-n>:sp<CR>:term<CR>
 nnoremap <Leader>" :sp<CR>:term<CR>
-inoremap <Leader>" <Esc>:sp<CR>:term<CR>
 
 " Plugins
 call plug#begin()
@@ -134,7 +134,7 @@ let g:AutoPairsShortcutJump = ''
 let g:AutoPairsShortcutToggle = ''
 
 " Toggle nerdtree shortcut
-map <C-n> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 
 " Shortcuts to fzf commands
 noremap <C-b> :Buffers<CR>
