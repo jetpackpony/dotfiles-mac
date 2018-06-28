@@ -37,7 +37,6 @@ inoremap <M-l> <Esc><C-w><C-l>
 inoremap <M-h> <Esc><C-w><C-h>
 
 " Remap leader
-" Don't set Space here, it'll slow down typing.
 " Don't set semicolon here, it is overwritten by 'next f result' command
 let mapleader = "\<Space>"
 
@@ -108,7 +107,6 @@ Plug '/usr/local/opt/fzf' " fzf fuzzy search
 Plug 'junegunn/fzf.vim' " fzf fuzzy search
 Plug 'vim-airline/vim-airline' " special kind of status bar
 Plug 'vim-airline/vim-airline-themes' " themes for vim airline
-Plug 'enricobacis/vim-airline-clock' " clock for vim airline
 Plug 'tpope/vim-fugitive' " git assist
 call plug#end()
 
@@ -154,4 +152,5 @@ let g:airline#extensions#default#layout = [
       \ [ 'z', 'error', 'warning' ]
       \ ]
 let g:airline_section_b = airline#section#create(['branch'])
-let g:airline_section_z = airline#section#create(['%1l',  ':%1v'])
+" Line numbers and clock on airline
+let g:airline_section_z = airline#section#create(['%1l',  '-%1v', '   ', '%{strftime("%H:%M")}'])
