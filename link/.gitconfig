@@ -7,9 +7,9 @@
   default = simple
 [core]
   excludesfile = ~/.gitignore_global
-	editor = nvim
+	editor = code --wait
 [diff]
-  tool = vimdiff
+  tool = code --wait
   compactionHeuristic = true
 [difftool]
   prompt = false
@@ -18,7 +18,7 @@
   graph = log --oneline --graph
   last = log -1 HEAD -p
 [merge]
-  tool = vimdiff
+  tool = code --wait
 [credential]
   helper = osxkeychain
 [alias]
