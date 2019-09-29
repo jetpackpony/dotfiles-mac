@@ -14,6 +14,7 @@ unset file
 # Setup git completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+
 # Change git's language to english
 alias git='LANG=en_US.UTF-8 git'
 
