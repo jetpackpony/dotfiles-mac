@@ -37,3 +37,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Setup autoenv
 export AUTOENV_ENABLE_LEAVE="true"
 source /usr/local/opt/autoenv/activate.sh
+
+# Change git's language to english
+alias git='LANG=en_US.UTF-8 git'
+
+export PATH="$HOME/.cargo/bin:$PATH"

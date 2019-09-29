@@ -1,0 +1,10 @@
+#!/bin/sh
+cd /Users/vvtaranov/Projects/a2b-frontend
+tmux has-session -t a2b
+if [ $? != 0 ]; then
+  tmux new-session -s a2b -n vim -d
+  tmux send-keys -t a2b 'vim' Enter
+  tmux split-window -h -t a2b
+  tmux send-keys -t a2b:vim.2 'git status' Enter
+fi
+tmux attach -t a2b
